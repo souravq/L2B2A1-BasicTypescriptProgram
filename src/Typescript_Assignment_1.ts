@@ -134,9 +134,28 @@ console.log(combineTypes(car,driver));
 
 //==========================
 
+// Problem 6:
+
+// Write a TypeScript function that takes a parameter of type unknown and uses a type guard to check whether the parameter is an array of numbers. If it is, calculate the sum of the numbers and log it. If it's not, log an error message.
+
+function addArrayNumbers(arrayParam:unknown):(number|string){
+    let total=0;
+    if(Array.isArray(arrayParam)){
+        for(let data of arrayParam){
+            if(typeof data == "number"){
+                total+=data;
+            }else{
+                return "Array's all elements are not number!!!";
+            }
+        }
+    }
+    return total;
+}
+
+console.log(addArrayNumbers([1,2,3,4,"5"]));
 
 
-
+//=======================
 
 
 
