@@ -11,8 +11,8 @@ function Problem1(param:string|number):number{
     return 0;
 }
 
-console.log(Problem1("Sourav"));
-console.log(Problem1(2));
+console.log(Problem1("Sourav")); //6
+console.log(Problem1(2)); //4
 
 
 //======================
@@ -44,7 +44,7 @@ let personObj:Person={
 
 }
 
-console.log(getAddressCity(personObj));
+console.log(getAddressCity(personObj)); //Kolkata
 
 //===================================
 // Problem 3:
@@ -70,7 +70,7 @@ function isCat(param:Cat):string{
     }
 }
 
-console.log(isCat(cat));
+console.log(isCat(cat)); //yes, it's a cat.
 
 //===========================
 
@@ -94,7 +94,7 @@ function getTotal(mixedDataParam:(number|string)[]):number{
     return total;
 }
 
-console.log(getTotal(mixedData));
+console.log(getTotal(mixedData)); // 9
 
 //=====================
 
@@ -130,7 +130,7 @@ function combineTypes(carParam:Car, driverParam:Driver):(Car|Driver){
     return {...carParam,...driverParam};
 }
 
-console.log(combineTypes(car,driver));
+console.log(combineTypes(car,driver)); //{make: 'Tata',model: 'Tata Nano',year: '2012',name: 'Sourav',licenseNumber: 'WB50XX1136'}
 
 //==========================
 
@@ -152,7 +152,7 @@ function addArrayNumbers(arrayParam:unknown):(number|string){
     return total;
 }
 
-console.log(addArrayNumbers([1,2,3,4,"5"]));
+console.log(addArrayNumbers([1,2,3,4,"5"])); //Array's all elements are not number!!!
 
 
 //=======================
@@ -204,7 +204,50 @@ console.log(indexInNumbers); //output:  1
 
 console.log(indexInStrings); //output: 2
 
-//====================================
+//=====================================
+
+// Problem 8:
+
+// Create a TypeScript program that simulates a simple shopping cart. Define an interface Product with properties like name, price, and quantity. Implement a function that calculates the total cost of the items in the shopping cart. The function should take an array of Product objects as input and return the total cost.
+
+interface Product{
+    name:string;
+    price:number;
+    quantity:number;
+}
+
+function calculateCartCost(arrayParam:Product[]):number{
+    let totalCost = 0;
+    arrayParam.forEach((product)=>{
+        totalCost+=product.price;
+    })
+    return totalCost;
+}
+
+const cartArr:Product[]=[
+    {
+        name:"Phone",
+        price:1000,
+        quantity: 2
+    },
+    {
+        name:"Book",
+        price:2000,
+        quantity: 2
+    },
+    {
+        name:"Laptop",
+        price:5000,
+        quantity: 2
+    }
+];
+
+console.log(calculateCartCost(cartArr)); //8000
+
+
+
+
+//==========================================
 
 
 
