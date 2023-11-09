@@ -2,7 +2,7 @@
 
 // Design a TypeScript function that takes a parameter of a union type (e.g., string | number). If it's a string, return its length. If it's a number, return the square of that number.
 
-function Problem1(param:string|number):number{
+function findLengthOrSquare(param:string|number):number{
     if(typeof param === "string"){
         return param.length;
     }else if(typeof param === "number"){
@@ -11,8 +11,8 @@ function Problem1(param:string|number):number{
     return 0;
 }
 
-console.log(Problem1("Sourav")); //6
-console.log(Problem1(2)); //4
+console.log(findLengthOrSquare("Sourav")); //6
+console.log(findLengthOrSquare(2)); //4
 
 
 //======================

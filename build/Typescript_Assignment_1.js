@@ -1,7 +1,7 @@
 "use strict";
 //Problem 1:
 // Design a TypeScript function that takes a parameter of a union type (e.g., string | number). If it's a string, return its length. If it's a number, return the square of that number.
-function Problem1(param) {
+function findLengthOrSquare(param) {
     if (typeof param === "string") {
         return param.length;
     }
@@ -10,8 +10,8 @@ function Problem1(param) {
     }
     return 0;
 }
-console.log(Problem1("Sourav")); //6
-console.log(Problem1(2)); //4
+console.log(findLengthOrSquare("Sourav")); //6
+console.log(findLengthOrSquare(2)); //4
 function getAddressCity(param) {
     var _a;
     return (_a = param.address) === null || _a === void 0 ? void 0 : _a.city;
