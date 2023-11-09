@@ -1,4 +1,6 @@
 "use strict";
+//Problem 1:
+// Design a TypeScript function that takes a parameter of a union type (e.g., string | number). If it's a string, return its length. If it's a number, return the square of that number.
 function Problem1(param) {
     if (typeof param === "string") {
         return param.length;
@@ -6,6 +8,7 @@ function Problem1(param) {
     else if (typeof param === "number") {
         return param * param;
     }
+    return 0;
 }
 console.log(Problem1("Sourav"));
 console.log(Problem1(2));
@@ -58,3 +61,25 @@ function getTotal(mixedDataParam) {
 }
 console.log(getTotal(mixedData));
 //=====================
+// Problem 5:
+// Define two interfaces: Car with properties like make, model, and year, and Driver with properties like name and licenseNumber. Create a function that takes two objects of type Car and Driver and returns an object with the combined properties of both types.
+class Car {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+}
+const car = new Car("Tata", "Tata Nano", "2012");
+class Driver {
+    constructor(name, licenseNumber) {
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+    }
+}
+const driver = new Driver("Sourav", "WB50XX1136");
+function combineTypes(carParam, driverParam) {
+    return Object.assign(Object.assign({}, carParam), driverParam);
+}
+console.log(combineTypes(car, driver));
+//==========================

@@ -1,10 +1,14 @@
+//Problem 1:
 
-function Problem1(param:string|number){
+// Design a TypeScript function that takes a parameter of a union type (e.g., string | number). If it's a string, return its length. If it's a number, return the square of that number.
+
+function Problem1(param:string|number):number{
     if(typeof param === "string"){
         return param.length;
     }else if(typeof param === "number"){
         return param*param;
     }
+    return 0;
 }
 
 console.log(Problem1("Sourav"));
@@ -58,7 +62,7 @@ class Cat{
 
 const cat = new Cat("TOM", "Black & White");
 
-function isCat(param:Cat){
+function isCat(param:Cat):string{
     if(param instanceof Cat){
         return "yes, it's a cat.";
     }else{
@@ -80,7 +84,7 @@ console.log(isCat(cat));
 
 const mixedData:(number|string)[] = [1, 'two', 3, 'four', 5];
 
-function getTotal(mixedDataParam:(number|string)[]){
+function getTotal(mixedDataParam:(number|string)[]):number{
     let total = 0;
     mixedDataParam.forEach((data)=>{
         if(typeof data == "number"){
@@ -94,7 +98,41 @@ console.log(getTotal(mixedData));
 
 //=====================
 
+// Problem 5:
 
+// Define two interfaces: Car with properties like make, model, and year, and Driver with properties like name and licenseNumber. Create a function that takes two objects of type Car and Driver and returns an object with the combined properties of both types.
+
+class Car{
+    make:string;
+    model:string;
+    year:string;
+    constructor(make:string,model:string,year:string){
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+}
+
+const car = new Car("Tata","Tata Nano","2012");
+
+class Driver{
+    name:string;
+    licenseNumber:string;
+    constructor(name:string, licenseNumber:string) {
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+    }
+}
+
+const driver = new Driver("Sourav","WB50XX1136");
+
+function combineTypes(carParam:Car, driverParam:Driver):(Car|Driver){
+    return {...carParam,...driverParam};
+}
+
+console.log(combineTypes(car,driver));
+
+//==========================
 
 
 
